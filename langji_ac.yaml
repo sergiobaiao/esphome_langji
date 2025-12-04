@@ -46,6 +46,7 @@ wifi:
 logger:
 api:
 ota:
+  platform: esphome
 
 switch:
   # Write Single Coil (0x05): remote power control
@@ -314,7 +315,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: langji_modbus
     name: "${friendly_name} Return Air Temperature"
-    register_type: input
+    register_type: read
     address: 0x0000
     unit_of_measurement: "°C"
     accuracy_decimals: 1
@@ -324,7 +325,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: langji_modbus
     name: "${friendly_name} Condenser Temperature"
-    register_type: input
+    register_type: read
     address: 0x0001
     unit_of_measurement: "°C"
     accuracy_decimals: 1
@@ -334,7 +335,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: langji_modbus
     name: "${friendly_name} Compressor/Heater Current"
-    register_type: input
+    register_type: read
     address: 0x0002
     unit_of_measurement: "A"
     accuracy_decimals: 2
@@ -344,7 +345,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: langji_modbus
     name: "${friendly_name} Internal Fan Current"
-    register_type: input
+    register_type: read
     address: 0x0003
     unit_of_measurement: "A"
     accuracy_decimals: 2
@@ -354,7 +355,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: langji_modbus
     name: "${friendly_name} External Fan Current"
-    register_type: input
+    register_type: read
     address: 0x0004
     unit_of_measurement: "A"
     accuracy_decimals: 2
@@ -364,7 +365,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: langji_modbus
     name: "${friendly_name} AC Voltage"
-    register_type: input
+    register_type: read
     address: 0x0005
     unit_of_measurement: "V"
     accuracy_decimals: 1
@@ -374,7 +375,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: langji_modbus
     name: "${friendly_name} Outdoor Temperature"
-    register_type: input
+    register_type: read
     address: 0x0006
     unit_of_measurement: "°C"
     accuracy_decimals: 1
@@ -384,7 +385,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: langji_modbus
     name: "${friendly_name} Indoor Humidity"
-    register_type: input
+    register_type: read
     address: 0x0007
     unit_of_measurement: "%"
     accuracy_decimals: 1
@@ -394,7 +395,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: langji_modbus
     name: "${friendly_name} Evaporator Temperature"
-    register_type: input
+    register_type: read
     address: 0x0008
     unit_of_measurement: "°C"
     accuracy_decimals: 1
@@ -404,7 +405,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: langji_modbus
     name: "${friendly_name} Internal Fan Speed"
-    register_type: input
+    register_type: read
     address: 0x0009
     unit_of_measurement: "RPM"
     accuracy_decimals: 0
@@ -412,7 +413,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: langji_modbus
     name: "${friendly_name} External Fan Speed"
-    register_type: input
+    register_type: read
     address: 0x000A
     unit_of_measurement: "RPM"
     accuracy_decimals: 0
@@ -420,7 +421,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: langji_modbus
     name: "${friendly_name} Compressor Speed"
-    register_type: input
+    register_type: read
     address: 0x000B
     unit_of_measurement: "RPM"
     accuracy_decimals: 0
